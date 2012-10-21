@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Phone Report: [[DATE]]</title>
+	<style>
+		body, html {margin:0; text-align: center;}
+		#wrapper {width: 800px; margin: 0 auto; padding:5px; position:relative; text-align: left;}
+		.report-box {padding-bottom:20px;}
+		table {width:100%; }
+		.contract {background:#BCBCBC; color: #2C2918; border-left: 1px solid #000; border-top: 1px solid #000; border-right: 1px solid #000;}
+		.contract-name {font-size:larger; font-weight:bold; font-family: Verdana;}
+		.contract-num {font-size:small;font-weight:bold;}
+		.legend {font-size: smaller; font-weight: bold; background: #959595;}
+		.numbers {background:#E9E9E9; color: #2C2918; border-left: 1px solid #000; border-top: 1px solid #000;}
+		.numbers td {border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center;}
+		.over {background: #FF8080;}
+	</style>
+	<script language="JavaScript">
+		function toggle(thisname) {
+			tr=document.getElementsByTagName('tr')
+			for (i=0;i<tr.length;i++){
+				if (tr[i].getAttribute(thisname)){
+					if ( tr[i].style.display=='none' ){
+						tr[i].style.display = '';
+					}
+					else {
+						tr[i].style.display = 'none';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<h2>Phone Report: [[DATE]]</h2>
+		<div class="report-box">
+			<table class="contract">
+				<tr class="contract-name"><td>Lugansk Center - Antamonov / Cummings</td><td><button onclick="toggle('toggle1');">Show All</button></td></tr>
+				<tr class="contract-num"><td>050-388-3016</td><td></td></tr> 
+			</table>
+			<table class="numbers" margin="0" cellpadding="0" cellspacing="0">
+				<tr class="legend"><td>In / Out</td><td>Caller Infomation</td><td>Date</td><td>Time</td><td>Duration</td></tr>
+				<tr class="flagged"><td>Incoming</td><td>Person Name - 050388-3016</td><td>Feb 28, 2010</td><td>18:14:23</td><td class="over">00:34:21</td></tr>
+				<tr id="ok" toggle1="x" style="display:none;"><td>Incoming</td><td>Person Name - 050388-3016</td><td>Feb 28, 2010</td><td>18:14:23</td><td>00:34:21</td></tr>
+			</table>
+		</div>
+		<div class="report-box">
+			<table class="contract">
+				<tr class="contract-name"><td>Lugansk Center - Antamonov / Cummings</td><td><button onclick="toggle('toggle2');">Show All</button></td></tr>
+				<tr class="contract-num"><td>050-388-3016</td> <td></td></tr> 
+			</table>
+			<table class="numbers 2" margin="0" cellpadding="0" cellspacing="0">
+				<tr class="legend"><td>In / Out</td><td>Caller Infomation</td><td>Date</td><td>Time</td><td>Duration</td></tr>
+				<tr class="flagged"><td>Incoming</td><td>Person Name - 050388-3016</td><td>Feb 28, 2010</td><td>18:14:23</td><td class="over">00:34:21</td></tr>
+				<tr id="ok" toggle2="x" style="display:none;"><td>Incoming</td><td>Person Name - 050388-3016</td><td>Feb 28, 2010</td><td>18:14:23</td><td>00:34:21</td></tr>
+			</table>
+		</div>
+		[[CONTENT]]
+	</div>
+</body>
+</html>
+

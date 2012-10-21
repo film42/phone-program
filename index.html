@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Phone Program 2.0</title>
+		<style>
+			* html body{overflow:hidden;}
+			body {background:#FEF9F0;}
+			#form {padding: 2px 5px 5px 5px;}
+		</style>
+	</head>
+	<body>
+		<div id="global">
+			<div id="form">
+			<form method="post" action="process.php"> 
+				<h2>Phone Report</h2> 
+				
+				<span>Select the following files and settings as required, then hit Process!</span> 	
+				<hr>
+				<center>
+				<br><br><br>
+				<table>
+					<tr><td><label>Name of Report: </label></td><td><input name="rname" type="text" maxlength="255" value=""/></td></tr>
+					<tr><td><label>Select an Inventory File (XML)</label></td><td><input name="inventory" type="file"/></td></tr>
+					<tr><td><label>Select a Directory File (XML) </label> </td><td><input name="directory" type="file"/></td></tr>
+					<tr><td><h3></h3></td><td></td></tr>
+					<tr><td><h3></h3></td><td></td></tr>
+					<tr><td><h3></h3></td><td></td></tr>
+					<tr><td><h3></h3></td><td></td></tr>
+					<tr><td><h3></h3></td><td></td></tr>
+					<tr><td><b>Settings</b></td><td></td></tr>
+					<tr><td><label>Earliest Time: </label></td><td><input name="mtime" type="text" maxlength="255" value="06:20:00"/></td></tr>
+					<tr><td><label>Latest Time: </label></td><td><input name="ltime" type="text" maxlength="255" value="22:10:00"/></td></tr>			
+					<tr><td><label>Maximum Duration: </label></td><td><input name="duration" type="text" maxlength="255" value="00:07:30"/></td></tr>			
+				</table>
+				<br><br><br><br><br>
+				</center>
+				<hr>
+				<input type="hidden" name="form_info" value="1" /> 
+				<input style="float:right;" type="submit" name="process" value="Process" />  
+			</form>	
+				<form style="padding:0;margin:0;" method="post" action="quit.php"> 
+					<button type="submit" style="margin-top:-38px;">  Quit  </button>
+				</form>	
+			</div>
+		</div>
+	</body>
+</html>
